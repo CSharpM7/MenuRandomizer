@@ -7,9 +7,14 @@ from tkinter import messagebox
 import sys
 import shutil
 
-
+root = Tk()
+root.withdraw()
 inputFolder = os.getcwd() + "/input"
+if not os.path.exists(inputFolder): 
+  os.makedirs(inputFolder)
+
 outputFolder = os.getcwd() + "/output"
+os.makedirs(outputFolder, exist_ok=True)
 template = os.getcwd() + "/template"
 nus3Path = "/stream;/sound/bgm/"
 clonename = "/bgm_crs2_01_menu.nus3audio"
